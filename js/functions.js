@@ -11,8 +11,9 @@
 // function sayHello(name) {
 //     return "Hello " + name + "!";
 // }
-// let helloMessage=sayHello("Daniel");
-// console.log(helloMessage);
+
+
+
 
 
 
@@ -40,7 +41,6 @@
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-// Define the sayHello function
 // function sayHello(name) {
 //     return "Hello " + name + "!";
 // }
