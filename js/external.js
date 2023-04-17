@@ -19,33 +19,39 @@ alert(`You will have to pay ${totalPrice} for renting the movies.`)
 var googleRate = 400;
 var amazonRate = 380;
 var facebookRate = 350;
-const googleHours = parseInt(prompt("How many hours did you work for Google?"));
-const amazonHours = parseInt(prompt("How many hours did you work for Amazon?"));
-const facebookHours = parseInt(prompt("How many hours did you work for Facebook?"));
+var googleHours = parseInt(prompt("How many hours did you work for Google?"));
+var amazonHours = parseInt(prompt("How many hours did you work for Amazon?"));
+var facebookHours = parseInt(prompt("How many hours did you work for Facebook?"));
 
 
 
-console.log(`Total payment: $${totalPayment}`);
+console.log(`Total payment: ${totalPayment}`);
 var totalPayment = (googleHours * googleRate) + (amazonHours * amazonRate) + (facebookHours * facebookRate);
 alert(`Your total payment for this week is $${totalPayment}.`);
 
 //3rd exercise
-const classIsFull = false;
-const scheduleConflicts = false;
+let userInputClassFull = prompt('Is the class full? (type yes or no)');
+let userInputClassSchedule = prompt('Does it conflict with the schedule? (type yes or no)');
 
-const canEnroll = !classIsFull && !scheduleConflicts;
-
-if (canEnroll) {
-    alert("You can enroll in the class!");
+if (userInputClassFull === "yes"){
+    if (userInputClassSchedule === "yes"){
+        console.log("You cannot be enrolled at this time")
+    } else {
+        alert("You are enrolled")
+    }
+    alert("You cannot be enrolled at this time")
 } else {
-    alert("Sorry, you cannot enroll in the class.");
+    alert("You are enrolled")
 }
+
 //4th exercise
 const numberOfItems = prompt('How many items did you buy?');
 const offerExpired = false;
-const isPremiumMember = confirm('Are you a premium member?');
+const isPremiumMember = confirm(prompt('Are you a premium member?'));
 
 const canApplyOffer = (!offerExpired && numberOfItems > 2) || isPremiumMember;
+
 alert(`Can apply offer: ${canApplyOffer}`);
+
 
 
