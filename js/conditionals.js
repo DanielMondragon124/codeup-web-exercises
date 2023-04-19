@@ -29,13 +29,13 @@
 //     } else if (color === 'green') {
 //         return 'green is the color of grass  '
 //     } else {
-//         return ' i dont know anything about ' + color;
+//         return ' I don't know anything about ' + color;
 //     }
 // }
-console.group(analyzeColor('blue'));
-console.group(analyzeColor('red'));
-console.group(analyzeColor('green'));
-console.group(analyzeColor('cyan' ));
+// console.group(analyzeColor('blue'));
+// console.group(analyzeColor('red'));
+// console.group(analyzeColor('green'));
+// console.group(analyzeColor('cyan' ));
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -66,7 +66,10 @@ function analyzeColor(color) {
             return 'I don\'t know anything about ' + color;
     }
 }
-
+console.group(analyzeColor('blue'));
+console.group(analyzeColor('red'));
+console.group(analyzeColor('green'));
+console.group(analyzeColor('cyan' ));
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -116,6 +119,12 @@ function calculateTotal(luckyNumber, totalAmount) {
             return totalAmount;
     }
 }
+console.log(calculateTotal(0, 100));
+console.log(calculateTotal(1, 100));
+console.log(calculateTotal(2, 100));
+console.log(calculateTotal(3, 100));
+console.log(calculateTotal(4, 100));
+console.log(calculateTotal(5, 100));
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -151,19 +160,45 @@ alert("Your lucky number is " + luckyNumber + ". Your bill before the discount w
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+// let enterNumber = confirm("Would you like to enter a number?");
+// if (enterNumber) {
+//     let input = prompt("Please enter a number:");
+//     let num = Number(input);
+//     if (isNaN(num)) {
+//         alert("Invalid input data type");
+//     } else {
+//         let evenOdd = num % 2 === 0 ? "even" : "odd";
+//         alert(`The number is ${evenOdd}`);
+//         let plus100 = num + 100;
+//         alert(`The number plus 100 is ${plus100}`);
+//         let posNeg = num >= 0 ? "positive" : "negative";
+//         alert(`The number is ${posNeg}`);
+//     }
+// }
 let enterNumber = confirm("Would you like to enter a number?");
-if (enterNumber) {
+
+while (enterNumber) {
     let input = prompt("Please enter a number:");
     let num = Number(input);
+
     if (isNaN(num)) {
         alert("Invalid input data type");
     } else {
         let evenOdd = num % 2 === 0 ? "even" : "odd";
+        alert(`The number is ${evenOdd}`);
         let plus100 = num + 100;
+        alert(`The number plus 100 is ${plus100}`);
         let posNeg = num >= 0 ? "positive" : "negative";
-        alert(`The number is ${evenOdd}. The number plus 100 is ${plus100}. The number is ${posNeg}.`);
+        alert(`The number is ${posNeg}`);
+        break; // exit the loop if the input is valid
     }
+    enterNumber = confirm("Would you like to enter a number?"); // prompt the user again
 }
+
+
+
+
+
 // function isEven(num) {
 //     return num % 2 === 0 ? "even" : "odd";
 // }
@@ -180,6 +215,8 @@ if (enterNumber) {
 //     if (isNaN(num)) {
 //         alert("Invalid input data type");
 //     } else {
-//         alert(`The number is ${isEven(num)}. The number plus 100 is ${plus100(num)}. The number is ${isPositive(num)}.`);
+//         alert(`The number is ${isEven(num)}`);
+//         alert(`The number plus 100 is ${plus100(num)}`);
+//         alert(`The number is ${isPositive(num)}`);
 //     }
 // }
