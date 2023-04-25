@@ -11,7 +11,15 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-
+var person = {
+    firstName: "Daniel",
+        lastName: "Mondragon",
+        sayHello: function() {
+        return "Hello from " + this.firstName + " " + this.lastName + "!";
+        }
+    };
+console.log(person.firstName);
+console.log(person.lastName);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,7 +29,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
+    // sayHello: function() {
+    //     return "Hello from " + this.firstName + " " + this.lastName + "!";
+    // }
+    console.log(person.sayHello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -36,11 +47,24 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+    shoppers.forEach(function(shopper) {
+        var name = shopper.name;
+        var amount = shopper.amount;
+        var discount = 0;
+
+        if (amount > 200) {
+            discount = amount * 0.12;
+        }
+
+        var finalAmount = amount - discount;
+
+        console.log(name + ' spent $' + amount.toFixed(2) + ', got a discount of $' + discount.toFixed(2) + ', and paid $' + finalAmount.toFixed(2) + ' in total.');
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,7 +78,46 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+    var books = [
+        {
+            title: "The Hitchhiker's Guide to the Galaxy",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "To Kill a Mockingbird",
+            author: {
+                firstName: "Harper",
+                lastName: "Lee"
+            }
+        },
+        {
+            title: "1984",
+            author: {
+                firstName: "George",
+                lastName: "Orwell"
+            }
+        },
+        {
+            title: "The Great Gatsby",
+            author: {
+                firstName: "F. Scott",
+                lastName: "Fitzgerald"
+            }
+        },
+        {
+            title: "Pride and Prejudice",
+            author: {
+                firstName: "Jane",
+                lastName: "Austen"
+            }
+        }
+    ];
+    books.forEach(function(book) {
+        console.log(book.title + " by " + book.author.firstName + " " + book.author.lastName);
+    });
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -79,6 +142,12 @@
      *      ---
      *      ...
      */
+    for (var i = 0; i < books.length; i++) {
+        console.log("Book # " + (i+1));
+        console.log("Title: " + books[i].title);
+        console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
+        console.log("---");
+    }
 
     /**
      * Bonus:
@@ -90,5 +159,33 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function createBook(title, authorFirstName, authorLastName) {
+        return {
+            title: title,
+            author: {
+                firstName: authorFirstName,
+                lastName: authorLastName
+            }
+        };
+    }
+
+    function showBookInfo(book) {
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    }
+
+    var books = [
+        createBook("The Hitchhiker's Guide to the Galaxy", "Douglas", "Adams"),
+        createBook("To Kill a Mockingbird", "Harper", "Lee"),
+        createBook("1984", "George", "Orwell"),
+        createBook("The Great Gatsby", "F. Scott", "Fitzgerald"),
+        createBook("Pride and Prejudice", "Jane", "Austen")
+    ];
+
+    for (var i = 0; i < books.length; i++) {
+        console.log("Book # " + (i+1));
+        showBookInfo(books[i]);
+        console.log("---");
+    }
 
 })();
