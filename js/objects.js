@@ -56,13 +56,10 @@ console.log(person.lastName);
         var name = shopper.name;
         var amount = shopper.amount;
         var discount = 0;
-
         if (amount > 200) {
             discount = amount * 0.12;
         }
-
         var finalAmount = amount - discount;
-
         console.log(name + ' spent $' + amount.toFixed(2) + ', got a discount of $' + discount.toFixed(2) + ', and paid $' + finalAmount.toFixed(2) + ' in total.');
     });
 

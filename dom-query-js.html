@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOM: Query and Modify</title>
+</head>
+<body>
+
+<h1 id="main-header">Hello World!</h1>
+<ul>
+  <li data-dbid="1">Item 1</li>
+  <li data-dbid="2">Item 2</li>
+  <li data-dbid="3">Item 3</li>
+  <li data-dbid="4">Item 4</li>
+  <li data-dbid="5">Item 5</li>
+</ul>
+<h2 id="sub-header">Hello Again.</h2>
+<p class="sub-paragraph">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+  ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+  aliquip ex ea commodo consequat. Duis aute irure dolor in
+  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+  culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<button id="button1">Set Main Header</button>
+<button id="button2">Set Sub Header Color</button>
+<button id="button3">Modify List Items</button>
+<button id="button4">Change Sub-Paragraph Text</button>
+
+<script>
+  (function() {
+    "use strict";
+    var mainHeader = document.getElementById("main-header");
+    var subHeader = document.getElementById("sub-header");
+    var listItems = document.getElementsByTagName("li");
+    var subParagraphs = document.getElementsByClassName("sub-paragraph");
+
+    // Event handler for button1: set inner html of mainHeader to "JavaScript is Cool"
+    document.getElementById("button1").addEventListener("click", function() {
+      mainHeader.innerHTML = "JavaScript is Cool";
+    });
+
+    // Event handler for button2: set the text color of subHeader to blue
+    document.getElementById("button2").addEventListener("click", function() {
+      subHeader.style.color = "blue";
+    });
+
+    // Event handler for button3: set text color on every other list item to grey and set text color of li with dbid = 1 to blue
+    document.getElementById("button3").addEventListener("click", function() {
+      for (var i = 0; i < listItems.length; i++) {
+        if (listItems[i].getAttribute("data-dbid") === "1") {
+          listItems[i].style.color = "blue";
+        } else if (i % 2 !== 0) {
+          listItems[i].style.color = "grey";
+        }
+      }
+    });
+
+    // Event handler for button4: change the text in the first sub paragraph to "Mission Accomplished!"
+    document.getElementById("button4").addEventListener("click", function() {
+      subParagraphs[0].textContent = "Mission Accomplished!";
+    });
+
+  })();
+</script>
+</body>
+</html>
