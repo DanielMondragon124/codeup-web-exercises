@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #999;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.stat p {
+    font-size: 1.2em;
+    color: #999;
+}
+
+.bio {
+    margin-bottom: 20px;
+}
+
+.tweets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tweet {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.tweet img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.tweet-body {
+    flex-grow: 1;
+}
+
+.tweet-body p {
+    margin-bottom: 10px;
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: #999;
+}

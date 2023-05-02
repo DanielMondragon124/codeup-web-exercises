@@ -1,18 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Practice</title>
+    <title>Twitter Profile</title>
+    <link rel="stylesheet" href="CSS/practice.css">
 </head>
 <body>
-<script src="js/practice.js">
-    "use strict";
-    (function() {
-        var btnToClick = document.getElementById('btnToClick');
-
-        console.log(btnToClick); // prints <button id="btnToClick">Click Me</button>
-    })();
-</script>
-
+<div class="container">
+    <header>
+        <img src="https://java.codeup.com/examples/css/twitter-profile-pic.jpg" alt="User profile image">
+        <h1>John Doe</h1>
+        <p>@johndoe</p>
+    </header>
+    <section class="stats">
+        <div class="stat">
+            <h2>1,234</h2>
+            <p>Tweets</p>
+        </div>
+        <div class="stat">
+            <h2>567</h2>
+            <p>Following</p>
+        </div>
+        <div class="stat">
+            <h2>890</h2>
+            <p>Followers</p>
+        </div>
+    </section>
+    <section class="bio">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu nunc et mauris rutrum congue. Nulla eu dolor eu massa commodo tristique ac ac arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam nec massa sed quam dapibus lacinia. Maecenas convallis euismod erat eu malesuada. Fusce elementum aliquam erat, sed lacinia justo maximus vel. Vestibulum tempus sapien sit amet velit volutpat mollis. Vestibulum eget turpis malesuada, interdum risus vitae, varius mauris.</p>
+    </section>
+    <section class="tweets">
+        <div class="tweet">
+            <img src="https://java.codeup.com/examples/css/twitter-profile-pic.jpg" alt="User profile image">
+            <div class="tweet-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu nunc et mauris rutrum congue. Nulla eu dolor eu massa commodo tristique ac ac arcu.</p>
+                <p class="timestamp">3:45 PM - 1 Jan 2022</p>
+            </div>
+        </div>
+        <div class="tweet">
+            <img src="https://java.codeup.com/examples/css/twitter-profile-pic.jpg" alt="User profile image">
+            <div class="tweet-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu nunc et mauris rutrum congue. Nulla eu dolor eu massa commodo tristique ac ac arcu.</p>
+                <p class="timestamp">3:45 PM - 1 Jan 2022</p>
+            </div>
+        </div>
+        <div class="tweet">
+            <img src="https://java.codeup.com/examples/css/twitter-profile-pic.jpg" alt="User profile image">
+            <div class="tweet-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu nunc et mauris rutrum congue. Nulla eu dolor eu massa commodo tristique ac ac arcu.</p>
+                <p class="timestamp">3:45 PM - 1 Jan 2022</p>
+            </div>
+        </div>
+    </section>
+</div>
 </body>
 </html>

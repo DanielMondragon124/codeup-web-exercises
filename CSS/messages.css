@@ -1,0 +1,30 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+p {
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.IF {
+    Background-color: lightblue;
+    border: 2px solid darkblue;
+}
+.SM {
+    background-color: #90EE90;
+    border: 2px solid darkgreen;
+}
+.WM {
+    background-color: #FFFFE0;
+    border: 2px solid yellow;
+}
+.EM {
+    background-color: #FFCCCB;
+    border: 2px solid darkred;
+}

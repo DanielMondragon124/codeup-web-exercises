@@ -42,38 +42,74 @@
 //     }
 // }, interval);
 
-function remainder(num1, num2) {
-    // Check if both arguments are numbers
-    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
-        return false;
+// function remainder(num1, num2) {
+//     // Check if both arguments are numbers
+//     if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+//         return false;
+//     }
+//
+//     // Return the remainder of the division
+//     return num1 % num2;
+// }
+// function containsAce(str) {
+//     // Check if the argument is a string
+//     if (typeof str !== 'string') {
+//         return false;
+//     }
+//
+//     // Convert both the argument and the search string to lowercase for case-insensitive matching
+//     str = str.toLowerCase();
+//     var searchStr = 'ace';
+//     searchStr = searchStr.toLowerCase();
+//
+//     // Check if the search string is found within the argument string
+//     if (str.indexOf(searchStr) !== -1) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+// function stringsAreSameLength(str1, str2) {
+//     // Check if both arguments are strings and have the same length
+//     if (typeof str1 === 'string' && typeof str2 === 'string' && str1.length === str2.length) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+// function findFactors() {
+//     return ;
+// }
+// const divisibleNumbers = num =>
+//     typeof num === 'number' ?
+//         Array.from({ length: num }, (_, i) => i + 1).filter(i => num % i === 0) : false;
+// function findFactors(num) {
+//     if (typeof num !== 'number' || isNaN(num) || num < 1) {
+//         return false;
+//     }
+//     const result = [];
+//     for (let i = 1; i <= num; i++) {
+//         if (num % i === 0) {
+//             result.push(i);
+//         }
+//     }
+//     return result;
+// }
+// Write a function that takes in a string and counts the instances of
+// the letter 'e' within the argument. The count should be case
+// insensitive. If the string does not contain any 'e's it should
+// return 0. If the argument is not a string it should return false.
+function countes(str) {
+    if (typeof str === "string") {
+        let count = 0;
+        let normalizedStr = str.toLowerCase();
+        for (let i = 0; i < str.length; i++) {
+            if (normalizedStr.charAt(i) === "e"){
+                count++;
+        }
     }
-
-    // Return the remainder of the division
-    return num1 % num2;
+    return count;
+} else {
+    return false;
 }
-function containsAce(str) {
-    // Check if the argument is a string
-    if (typeof str !== 'string') {
-        return false;
-    }
-
-    // Convert both the argument and the search string to lowercase for case-insensitive matching
-    str = str.toLowerCase();
-    var searchStr = 'ace';
-    searchStr = searchStr.toLowerCase();
-
-    // Check if the search string is found within the argument string
-    if (str.indexOf(searchStr) !== -1) {
-        return true;
-    } else {
-        return false;
-    }
-}
-function stringsAreSameLength(str1, str2) {
-    // Check if both arguments are strings and have the same length
-    if (typeof str1 === 'string' && typeof str2 === 'string' && str1.length === str2.length) {
-        return true;
-    } else {
-        return false;
-    }
 }
