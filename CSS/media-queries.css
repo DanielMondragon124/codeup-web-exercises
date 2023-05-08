@@ -1,13 +1,122 @@
-@media screen and (max-width: 768px) {
-    a[href] {
-        display: block;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+@media screen and (max-width: 576px) {
+    .alert-info {
+        background: lightskyblue;
+        border: 1px solid lightgrey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    h1 {
+        text-align: center;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-right: 40px;
     }
 
+    .nav-links li {
+        width: 115%;
+        display: block;
+        background: lightgrey;
+        padding: 10px;
+        margin: 5px;
+        list-style-type: none;
+        text-align: center;
+        justify-content: center;
+    }
+    .header-img {
+        text-align: center; /* centers the image horizontally */
+    }
+
+    .header-img img {
+        max-width: 100%; /* ensures the image fits within its container */
+        height: auto; /* ensures the image maintains its aspect ratio */
+        display: block; /* removes any default inline styling */
+        margin: 0 auto; /* centers the image horizontally */
+    }
+
+    html {
+        justify-content: center;
+    }
 }
+@media screen and (min-width: 576px) {
+    html {
+        background: bisque;
+    }
+
+    h1 {
+        display: inline-block;
+        float: left;
+        margin: 0;
+    }
+
+    nav {
+        display: inline-block;
+        float: right;
+        margin: 6px;
+    }
+
+    ul.nav-links {
+        list-style: none;
+        margin: 0px;
+        padding: 0px 0px 50px 0px;
+        text-align: right;
+    }
+
+    ul.nav-links li {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+
+    .alert-info {
+        display: none;
+    }
+
+    .header-img {
+        text-align: center; /* centers the image horizontally */
+    }
+
+    .header-img img {
+        max-width: 100%; /* ensures the image fits within its container */
+        height: auto; /* ensures the image maintains its aspect ratio */
+        display: block; /* removes any default inline styling */
+        margin: 0 auto; /* centers the image horizontally */
+    }
+
+    .main {
+        float: left;
+        width: 70%;
+    }
+    .sub-section {
+        float: left;
+        width: 30%;
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px; /* set a specific height for the footer if needed */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
