@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: navy;
+    overflow: hidden;
+}
+
+#text-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#title, #reflection {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0;
+    opacity: 0;
+    animation: floating 3s ease-in-out infinite;
+    transition: opacity 3s;
+}
+
+#reflection {
+    transform: scaleY(-1);
+    position: absolute;
+    top: 100%;
+    opacity: 0.4;
+
+}
+.reflection-text {
+    transform: rotate(180deg);
+}
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+#content {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.overlay {*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 30vh;*/
+/*    z-index: 100;*/
+
+/*    background: rgb(255, 255, 255);*/
+/*    background: linear-gradient(*/
+/*            0deg,*/
+/*            rgba(255, 255, 255, 1) 75%,*/
+/*            rgba(255, 255, 255, 0.9) 80%,*/
+/*            rgba(255, 255, 255, 0.25) 95%,*/
+/*            rgba(255, 255, 255, 0) 100%*/
+/*    );*/
+/*}*/
+
+/*.text {*/
+/*    font-family: "Yanone Kaffeesatz";*/
+/*    font-size: 100px;*/
+/*    display: flex;*/
+/*    position: absolute;*/
+/*    bottom: 20vh;*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%);*/
+/*    user-select: none;*/
+/*}*/
+/*.wrapper {*/
+/*    padding-left: 20px;*/
+/*    padding-right: 20px;*/
+/*    padding-top: 20px;*/
+/*}*/
+/*.letter {*/
+/*    transition: ease-out 1s;*/
+/*    transform: translateY(40%);*/
+/*}*/
+/*.shadow {*/
+/*    transform: scale(1, -1);*/
+/*    color: #999;*/
+/*    transition: ease-in 5s, ease-out 5s;*/
+
+
+/*.letter {*/
+/*    transform: translateY(-200%);*/
+/*}*/
+/*.shadow {*/
+/*    opacity: 0;*/
+/*    transform: translateY(200%);*/
+/*}*/
+
+
+
+/*#title {*/
+/*    font-size: 6rem;*/
+/*    opacity: 0;*/
+/*    transform: scale(0.1);*/
+/*    transition: opacity 3s, transform 3s;*/
+/*    animation: floating 3s ease-in-out infinite;*/
+/*}*/
+/*#title2 {*/
+/*    font-size: 2rem;*/
+/*    opacity: 0;*/
+/*    transform: scale(0.1);*/
+/*    trasnsition: opacity 3s, transform 3s;*/
+/*    animation: floating 3s ease-in-out infinite;*/
+/*}*/
+
+/*@keyframes floating {*/
+/*    0%, 100% {*/
+/*        transform: translateY(0) scale(1);*/
+/*    }*/
+/*    50% {*/
+/*        transform: translateY(-10px) scale(1);*/
+/*    }*/
+/*}*/
+
+/*#content {*/
+/*    display: none;*/
+/*}*/
+/*.Loading-Title {*/
+/*    background: linear-gradient(to bottom, black,white,black);*/
+/*    -webkit-background-clip: text;*/
+/*    -webkit-text-fill-color: transparent;*/
+
+/*}*/

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferrari</title>
+    <link rel="stylesheet" href="CSS/FerrariAutoPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+</head>
+<body>
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <h1 class="Loading-Title" id="title"><img src="photos/abaa.png" alt="Ferreri horse"></h1>
+    <h3 class="Loading-Title" id="title2"></h3>
+</div>
+<header>
+    <a href="/codeup-web-excersises/Ferrari.html" class="logo-link">
+        <img src="photos/abaa.png" alt="Your Logo" class="logo">
+    </a>
+</header>
+<div class="slider-container" id="slider1">
+    <div class="slider">
+        <!-- Replace these img src with your own images -->
+        <img src="photos/abaa.png" alt="Image 1">
+        <img src="photos/aaa.jpeg" alt="Image 2">
+        <img src="photos/cars3.webp" alt="Image 3">
+    </div>
+    <div class="slider-text">
+        <h2>Slider 1</h2>
+        <p>Some description for slider 1.</p>
+    </div>
+    <div class="controls">
+        <button class="arrow prev" onclick="changeSlide('slider1', -1)">&#10094;</button>
+        <button class="arrow next" onclick="changeSlide('slider1', 1)">&#10095;</button>
+    </div>
+    <div class="indicators" id="indicators1"></div>
+</div>
+
+<!-- Add your content between the sliders -->
+<div class="content">
+    <h1>Your content here</h1>
+</div>
+
+<div class="slider-container" id="slider2">
+    <div class="slider">
+        <!-- Replace these img src with your own images -->
+        <img src="photos/duck.jpeg" alt="Image 4">
+        <img src="photos/ferrari5.webp" alt="Image 5">
+        <img src="photos/ferrarilo.jpeg" alt="Image 6">
+        <img src="photos/ferrari3.png" alt="Image 7">
+    </div>
+    <div class="slider-text">
+        <h2>Slider 2</h2>
+        <p>Some description for slider 2.</p>
+    </div>
+    <div class="controls">
+        <button class="arrow prev" onclick="changeSlide('slider2', -1)">&#10094;</button>
+        <button class="arrow next" onclick="changeSlide('slider2', 1)">&#10095;</button>
+    </div>
+    <div class="indicators" id="indicators2"></div>
+</div>
+
+<!-- Add your content between the sliders -->
+<div class="content">
+    <h1>Your content here</h1>
+</div>
+
+<div class="slider-container collage" id="slider3">
+    <div class="slider">
+        <!-- Replace these img src with your own images -->
+        <img src="photos/ferrari6.webp" alt="Collage Image 1">
+        <img src="photos/ferrari5.webp" alt="Collage Image 2">
+        <img src="photos/ferrari2.jpeg" alt="Collage Image 3">
+        <img src="photos/ferrari.png" alt="Collage Image 4">
+        <img src="photos/ferrari3.png" alt="Collage Image 5">
+        <img src="photos/ferraricars.jpeg" alt="Collage Image 6">
+    </div>
+    <div class="slider-text">
+        <h2>Slider 3</h2>
+        <p>Some description for slider 3.</p>
+    </div>
+    <div class="controls">
+        <button class="arrow prev" onclick="changeSlide('slider3', -1)">&#10094;</button>
+        <button class="arrow next" onclick="changeSlide('slider3', 1)">&#10095;</button>
+    </div>
+    <div class="indicators" id="indicators3"></div>
+</div>
+
+<script src="js/FerrariAutoPage.js"></script>
+</body>
+</html>

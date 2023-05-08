@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Loading Front Page*/
+#loader-wrapper {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom,black,black,black,black);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#loader {
+    display: none;
+}
+#loader {
+    display: none;
+}
+
+#title {
+    color: #fff;
+    font-size: 3rem;
+    font-family: Didot;
+    opacity: 0;
+    transform: scale(0.1);
+    transition: opacity 3s, transform 3s;
+    animation: floating 3s ease-in-out infinite;
+}
+#title2 {
+    color: #fff;
+    font-size: 1rem;
+    font-family: Didot;
+    opacity: 0;
+    transform: scale(0.1);
+    transition: opacity 3s, transform 3s;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1);
+    }
+}
+body {
+    background: linear-gradient(to top, black, #433d39);
+}
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+header {
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    z-index: 10;
+    top: 10px;
+}
+nav {
+    display: flex;
+    padding: 1rem 1rem;
+}
+.logo-link {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    position: relative;
+    width: 100px; /* adjust this to control the logo size */
+    top: 20px;
+
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    transition: transform 1s;
+}
+
+.slider img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.slider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 5px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.indicator.active {
+    opacity: 1;
+}
+
+.content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.collage .slider {
+    flex-wrap: wrap;
+}
+
+.collage .slider img {
+    width: 50%;
+}

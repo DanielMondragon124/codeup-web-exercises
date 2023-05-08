@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Nav</title>
+    <link rel="stylesheet" href="CSS/flexbox-nav-exercise.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+</head>
+<body>
+<header>
+    <a href="Ferrari.html" class="logo-link">
+        <img src="photos/abaa.png" alt="Your Logo" class="logo">
+    </a>
+    <nav>
+<!--        <div class="logo"><img src="photos/abaa.png"></div>-->
+        <ul class="menu">
+            <li class="menu-item">
+                <div>Articles</div>
+                <ul class="dropdown">
+                    <li>Ferrari Rome</li>
+                    <li>Ferrari Italy</li>
+                    <li>Ferrari France</li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <div>Models</div>
+                <ul class="dropdown">
+                    <li>SF90 Stradle</li>
+                    <li>Ferrari Roma</li>
+                    <li>Ferrari 296 GTB</li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <div>Universe</div>
+                <ul class="dropdown">
+                    <li>News</li>
+                    <li>The Official Ferrari Magazine</li>
+                    <li>Ferrari Museums</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="icons">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user"></i>
+        </div>
+    </nav>
+</header>
+
+<div id="slideshow-container">
+    <div class="image-container" id="image-container1"></div>
+    <div class="image-container" id="image-container2"></div>
+    <button id="prev-arrow" class="arrow">&lt;</button>
+    <button id="next-arrow" class="arrow">&gt;</button>
+</div>
+
+<div class="content">
+    <!-- Add your content here -->
+</div>
+<footer>
+    <div class="container">
+        <section class="top-footer">
+            <div class="logo-div">
+                <h1><a href="#"><img src="photos/abaa.png"></a></h1>
+                <a class="Footer-RL" href="#">We are the competition</a>
+            </div>
+            <ul>
+                <li><a href="#">Weebly Themes</a></li>
+                <li><a href="#">Pre-Sale FAQS</a></li>
+                <li><a href="#">Submit a Ticket</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Theme Tweak</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Showcase</a></li>
+                <li><a href="#">Widgetkit</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Affiliates</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+        </section>
+    </div>
+</footer>
+<script src="js/flexbox-nav-exercise.js"></script>
+</body>
+</html>

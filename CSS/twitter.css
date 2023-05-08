@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 body, html {
-    background-color:var(--main-bg) ;
+    background-color: dimgrey ;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -19,6 +19,7 @@ body, html {
 header {
     background-image: url("https://picsum.photos/1200/300");
     background-size: cover;
+    width: 100%;
     min-height: 300px;
     padding-top: 275px;
 }
@@ -29,27 +30,68 @@ a {
     background: var(--light-bg);
     padding: 10px;
 }
-.nav {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+nav {
+    display: flex;
+
+    padding: 1rem 1rem;
 }
-.nav-link {
-    color: var(--main-link-color);
+
+.logo {
+    font-family: Didot;
+    font-size: 2.5rem;
     font-weight: bold;
-    text-decoration: none;
+    color: deepskyblue;
+    text-stroke: 1px white;
 }
-.nav-link:hover {
-    color: var(--link-color);
+
+.menu {
+    display: flex;
+    list-style: none;
 }
-.nav-item {
-    display: inline-block;
-    margin-right: 35px;
-    margin-left: 50px;
+
+.menu-item {
+    font-family: Didot;
+    font-size: 1rem;
+    margin-left: 2rem;
+    cursor: pointer;
+    position: relative;
+    color: deepskyblue; /* color of the text for headers dropdown*/
+}
+
+.menu-item:hover > div {
+    color: black;
+}
+
+.menu-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(to bottom, #433d39, transparent);
+    /*Changes color of dropdown box*/
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+}
+
+.dropdown li {
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+}
+
+.dropdown li:hover {
+    background: linear-gradient(to bottom, black, transparent); /* changes color of dropdown box which is hovered over*/
 }
 .profile {
     background: var(--light-bg);
     padding: 35px;
+}
+.PI {
+    list-style-type: none;
 }
 .btn {
     border: 1px solid var(--main-link-color);
@@ -62,6 +104,11 @@ a {
 .btn-large {
     font-size: 1.3em;
     padding: 10px;
+    cursor: pointer;
+}
+.btn-large:hover {
+    background-color: deepskyblue;
+    color: white;
 }
 .img-circle {
     border-radius: 100%;
@@ -87,7 +134,7 @@ main {
     overflow: auto;
     box-sizing: border-box;
     position: absolute;
-    top: 470px;
+    top: 537px;
     left: 450px;
     font-size: 12px;
 }
@@ -135,4 +182,7 @@ main {
     position: relative;
     left: 1480px;
     bottom: 168px;
+}
+.who-to-follow img {
+    width
 }

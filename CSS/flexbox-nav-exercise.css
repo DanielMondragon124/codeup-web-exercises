@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Loading Front Page*/
+#loader-wrapper {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom,black,black,black,black);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#loader {
+    display: none;
+}
+#loader {
+    display: none;
+}
+
+#title {
+    color: #fff;
+    font-size: 3rem;
+    font-family: Didot;
+    opacity: 0;
+    transform: scale(0.1);
+    transition: opacity 3s, transform 3s;
+    animation: floating 3s ease-in-out infinite;
+}
+#title2 {
+    color: #fff;
+    font-size: 1rem;
+    font-family: Didot;
+    opacity: 0;
+    transform: scale(0.1);
+    transition: opacity 3s, transform 3s;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1);
+    }
+}
+
+#content {
+    display: none;
+}
+h1 {
+    mix-blend-mode: screen ;
+    margin-left: 50px;
+    margin-top: 10px;
+
+}
+h1 img {
+    height: auto;
+    width: auto;
+}
+/*End of Loading Front page*/
+html {
+    background: linear-gradient(to bottom, #433d39, antiquewhite);
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #968e7c;
+}
+
+header {
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    z-index: auto;
+    top: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-family: Didot;
+    font-size: 1rem;
+    font-weight: bold;
+    color: antiquewhite;
+
+    /*-webkit-text-stroke: 1px white;*/ /* This can outline your text with another color */
+    /*text-stroke: 1px white;*/
+}
+.logo img {
+    width: 40%;
+    height: 40%;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu-item {
+    font-family: Didot;
+    font-size: 1rem;
+    margin-left: 2rem;
+    cursor: pointer;
+    position: relative;
+    color: white; /* color of the text for headers dropdown*/
+}
+
+.menu-item:hover > div {
+    color: #867767;
+}
+
+.menu-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(to bottom, #433d39, transparent);
+    /*Changes color of dropdown box*/
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+}
+
+.dropdown li {
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+}
+
+.dropdown li:hover {
+    background-color: #968e7c; /* changes color of dropdown box which is hovered over*/
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons i {
+    font-size: 1.2rem;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+.icons i:hover {
+    color: #867767;
+}
+
+#slideshow-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: -70px;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    transition: opacity 1s;
+}
+
+.arrow {
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    outline: none;
+}
+
+.arrow:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#prev-arrow {
+    left: 1%;
+}
+
+#next-arrow {
+    right: 1%;
+}
+
+.content {
+    margin-top: 100vh;
+    height: 100vh; /* Adjust the height based on the content */
+    background: #433d39;
+    padding: 2rem;
+
+}
+
+footer {
+    width: 100%;
+    background: linear-gradient(to top, black, #433d39);
+    padding: 1rem 1rem;
+    text-align: center;
+}
+footer li {
+    font-family: Didot;
+    color: antiquewhite;
+
+}
+.Footer-RL {
+    font-family: Didot;
+}
+.container {
+    min-width: 768px;
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 2em;
+}
+footer h1 {
+    margin: 0;
+    font-weight: bolder;
+}
+h5 {
+    color: white;
+    font-weight: 200;
+    text-align: center;
+}
+footer a {
+    color: antiquewhite;
+    text-decoration: none;
+}
+footer .icon-wrapper:hover,
+footer .top-footer a:hover {
+    color: black;
+    background: antiquewhite;
+}
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+footer .container {
+    /* here we make the footer a flex container in a column layout to evenly space the sections of the footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4em 0;
+    height: 30em;
+}
+.top-footer {
+    /* here we make the top footer section a flex container to space out the multiple lists of links */
+    display: flex;
+    justify-content: space-between;
+}
+.icon-wrapper {
+    border: 2px solid grey;
+    border-radius: 2.4em;
+    height: 2.4em;
+    width: 2.4em;
+    /* here we make the icon wrappers into flex containers to center the icons */
+    display: flex;
+}
+.icon-wrapper i {
+    /* here we center the icons inside their flex container wrappers */
+    margin: auto;
+}
+.logo-div {
+    /* here we set a larger size along the main axis and push the div a bit up for aesthetics */
+    flex-basis: 25%;
+    position: relative;
+    bottom: 5px;
+}
+.logo-div img {
+    width: 50%;
+    height: 50%;
+}
+.logo-link {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    width: 100px; /* adjust this to control the logo size */
+    height: auto;
+}
+.social-media-links {
+    /* here we make the div containing the social media links into a flex container to orient them in a row */
+    display: flex;
+}
+footer .bottom-footer {
+    /* here we ensure the social media link container is horizontally centered by setting its parent to be a flex container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .top-footer a {
+    text-transform: uppercase;
+    font-weight: 200;
+}
+footer .bottom-footer a {
+    margin: .3em;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    background: grey;
+}
