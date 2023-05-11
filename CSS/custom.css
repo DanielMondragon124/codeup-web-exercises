@@ -1,0 +1,12 @@
+.jumbotron {
+    height: 400px;
+    background-image: url("../photos/nissanskyline.webp");
+    background-size: 90%;
+}
+
+.full-page {
+    min-height: 100vh;
+}
+body {
+    background: linear-gradient(to bottom, #433d39, grey);
+}

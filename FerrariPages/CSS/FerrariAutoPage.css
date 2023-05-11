@@ -61,6 +61,7 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
 }
 header {
     width: 100%;
@@ -113,6 +114,67 @@ nav {
     text-align: center;
 }
 
+.slider-text-last1 {
+    position: absolute;
+    top: 17%;
+    left: 13.5%;
+    text-align: center;
+    opacity: 50%;
+}
+.slider-text-last1:hover {
+    opacity: 100%;
+}
+.slider-text-last2 {
+    position: absolute;
+    top: 17%;
+    left: 68%;
+    text-align: center;
+    opacity: 50%;
+}
+.slider-text-last2:hover {
+    opacity: 100%;
+}
+.slider-text-last3 {
+    position: absolute;
+    top: 62%;
+    left: 13.5%;
+    text-align: center;
+    opacity: 50%;
+}
+.slider-text-last3:hover {
+    opacity: 100%;
+}
+.slider-text-last4 {
+    position: absolute;
+    top: 62%;
+    left: 68%;
+    text-align: center;
+    opacity: 50%;
+}
+.slider-text-last4:hover {
+    opacity: 100%;
+}
+.slider-text-last5 {
+    position: absolute;
+    top: 90%;
+    left: 13.5%;
+    text-align: center;
+    opacity: 50%;
+}
+.slider-text-last5:hover {
+    opacity: 100%;
+}
+.slider-text-last6 {
+    position: absolute;
+    top: 90%;
+    left: 68%;
+    text-align: center;
+    opacity: 50%;
+}
+.slider-text-last6:hover {
+    opacity: 100%;
+}
+
 .controls {
     position: absolute;
     top: 50%;
@@ -153,7 +215,11 @@ nav {
 
 .content {
     text-align: center;
-    padding: 2rem;
+    /*padding: 2rem;*/
+    height: 900px;
+    width: 50%;
+    border: 1px solid black;
+    padding: 10px;
 }
 
 .collage .slider {
