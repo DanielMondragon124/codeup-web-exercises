@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coffee!</title>
+  <link rel="stylesheet" href="CSS/coffee.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>Coffee!</h1>
+
+  <form>
+    <div class="form-group">
+      <label for="search">Search:</label>
+      <input type="text" id="search" class="form-control" placeholder="Search by name">
+    </div>
+    <div class="form-group">
+      <label for="roast-selection">Roast:</label>
+      <select id="roast-selection" class="form-control">
+        <option value="All">All Roasts</option>
+        <option value="light">Light</option>
+        <option value="medium">Medium</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+    <button id="submit" type="submit" class="btn btn-primary">Filter</button>
+  </form>
+
+  <div id="coffees" class="row"></div>
+
+  <form id="add-coffee-form">
+    <div class="form-group">
+      <label for="coffee-name">Coffee Name:</label>
+      <input type="text" id="coffee-name" class="form-control" placeholder="Enter coffee name" required>
+    </div>
+    <div class="form-group">
+      <label for="coffee-roast">Roast:</label>
+      <select id="coffee-roast" class="form-control">
+        <option value="light">Light</option>
+        <option value="medium">Medium</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+    <button id="add-coffee" type="submit" class="btn btn-primary">Add Coffee</button>
+  </form>
+
+</div>
+
+<script src="js/coffee.js"></script>
+</body>
+</html>
