@@ -20,6 +20,20 @@ $(function() {
     )
 
 
+
+    // $('#textfield').keyup(function() {
+    //     alert('A key was pushed down!');
+    // });
+
+    $('p').off();
+
+
+
+
+
+
+
+
     // $('li').css('font-size','20px');
     // $('h1, p,li').css('background-color', 'yellow')
     // var contents = $('h1').html();
