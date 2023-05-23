@@ -2,17 +2,49 @@
 <html>
 <head>
   <title>Konami Code</title>
+  <style>
+    /* Additional CSS styles for the page changes */
+    body {
+      background-color: white;
+      transition: background-color 1.5s ease;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-<h1>Konami Code</h1>
+<h1 class="">Konami Code</h1>
 
-<script src="/js/jquery.js"></script>
+
+<audio id="myAudio">
+  <source src="sounds/horror-chase-music-loop-67634.mp3" type="audio/wav">
+</audio>
+
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 <script>
   "use strict";
   var konamiCodeSequence = [
           38,38,40,40,37,39,37,39,66,65,13
   ];
   var konamiCodeIndex = 0;
+
+  var colors = ["purple", "red", "blue", "green"];
+  var colorIndex = 0;
+
+  function changeBackgroundColor() {
+    $('body').css('background-color', colors[colorIndex]);
+
+    colorIndex++;
+    if (colorIndex === colors.length) {
+      colorIndex = 0;
+    }
+  }
+
+
+
+
 
 
   $(document).keyup(function(event){
@@ -25,12 +57,45 @@
 
       if (konamiCodeIndex === konamiCodeSequence.length) {
         alert("You have added 30 lives!");
+
+        var audio = document.getElementById('myAudio');
+        audio.play();
+
+
+        changeBackgroundColor();
+        setInterval(changeBackgroundColor, 2000);
+
+        // Make additional changes to the page
+        $('.hidden').fadeIn();
+
+        showPopupImage('photos/pngwing.com.png');
+
       }
     } else {
       konamiCodeIndex
     }
 
   });
+
+
+  function showPopupImage(imageUrl) {
+    var popupContainer = document.createElement('div');
+    popupContainer.style.position = 'fixed';
+    popupContainer.style.top = '50%';
+    popupContainer.style.left = '50%';
+    popupContainer.style.transform = 'translate(-50%, -50%)';
+
+    var imageElement = document.createElement('img');
+    imageElement.src = imageUrl;
+    imageElement.style.width = '400px';
+    imageElement.style.height = '300px';
+    popupContainer.appendChild(imageElement);
+    document.body.appendChild(popupContainer);
+  }
+
+
+
 </script>
+
 </body>
 </html>
