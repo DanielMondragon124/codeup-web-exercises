@@ -159,32 +159,56 @@
 // console.log(mostColorful(hamsters)); // returns {name: "Snoozer", heightInMM: 85, fur: ['brown', 'white', "pink"], gender: "male", dateOfBirth: "January 14"};
 //
 
-function describeNumber(number) {
-    var result = {
-        number: number,
-        evenOrOdd: number % 2 === 0 ? "even" : "odd",
-        factors: [],
-        numberOfDigits: number.toString().length
+// function describeNumber(number) {
+//     var result = {
+//         number: number,
+//         evenOrOdd: number % 2 === 0 ? "even" : "odd",
+//         factors: [],
+//         numberOfDigits: number.toString().length
+//     };
+//
+//     for (var i = 1; i <= number; i++) {
+//         if (number % i === 0) {
+//             result.factors.push(i);
+//         }
+//     }
+//
+//     return result;
+// }
+//
+// console.log(describeNumber(19)); // returns {number: 19, evenOrOdd: "odd", factors: [1,19], numberOfDigits: 2};
+// console.log(describeNumber(2)); // returns {number: 2, evenOrOdd: "even", factors: [1,2], numberOfDigits: 1};
+
+function analyzeString(str) {
+    var stringProperties = {
+        string: str,
+        numberOfWords: str.split(' ').length,
+        instancesOfE: (str.match(/[eE]/g) || []).length
     };
-
-    for (var i = 1; i <= number; i++) {
-        if (number % i === 0) {
-            result.factors.push(i);
-        }
-    }
-
-    return result;
+    return stringProperties;
 }
 
-console.log(describeNumber(19)); // returns {number: 19, evenOrOdd: "odd", factors: [1,19], numberOfDigits: 2};
-console.log(describeNumber(2)); // returns {number: 2, evenOrOdd: "even", factors: [1,2], numberOfDigits: 1};
 
+console.log(analyzeString("aererE"));
 
+function getPricePerItem(item) {
+    // Calculate the price per item by dividing the total price by the quantity
+    const pricePerItem = item.totalPrice / item.quantity;
+    // Format the price per item as a string with two decimal places
+    const formattedPrice = pricePerItem.toFixed(2);
+    // Prepend the currency symbol "$" to the formatted price
+    const priceWithSymbol = "$" + formattedPrice;
+    // Return the price per item string
+    return priceWithSymbol;
+}
 
+let potatoes = {
+    name: "potatoes",
+    quantity: 20,
+    totalPrice: 47
+};
 
-
-
-
+getPricePerItem(potatoes);
 
 
 

@@ -1,66 +1,99 @@
-setTimeout(function () {
-    document.getElementById("heading").innerText = "Howdy!"; //accessing a single element by id, and changing the inner text!
-    document.getElementById("heading").style.color = "firebrick"; // in the event of a duplicate id, only the first element is affected
-}, 2000);
+function renderCoffee(coffee) {
+    var div = document.createElement('div');
+    div.classList.add('col-sm-6', 'col-md-4', 'col-lg-3'); // Add bootstrap column classes to div
 
-let listItems = document.getElementsByClassName("list-item"); // this will result in an HTMLCollection of all the elements with the class of "list-item"
+    var heading = document.createElement('h2');
+    heading.textContent = coffee.name;
+    div.appendChild(heading);
 
-console.log(listItems);
+    var paragraph = document.createElement('p');
+    paragraph.textContent = coffee.roast;
+    div.appendChild(paragraph);
 
-listItems.style = "background-color: yellow"; // This will not work, as HTMLCollections lack a style property
+    return div;
+}
 
-for (let i = 0; i < listItems.length; i++) {
-    if (i % 2 === 0) {
-        listItems[i].style = "background-color: yellow"; // this will work!
-    } else {
-        listItems[i].style = "background-color: steelblue; color: antiquewhite"; // changing multiple style properties!
+function renderCoffees(coffees) {
+    var coffeesContainer = document.getElementById('coffees');
+    coffeesContainer.innerHTML = '';
+
+    coffees.forEach(function(coffee) {
+        var coffeeDiv = renderCoffee(coffee);
+        coffeesContainer.appendChild(coffeeDiv);
+    });
+}
+
+
+function updateCoffees(e) {
+    e.preventDefault();
+
+    var searchTerm = searchInput.value.toLowerCase();
+    var selectedRoast = roastSelection.value;
+
+    var filteredCoffees = coffees.filter(function(coffee) {
+        if (selectedRoast === 'All' || coffee.roast === selectedRoast) {
+            return coffee.name.toLowerCase().includes(searchTerm);
+        }
+    });
+
+    filteredCoffees.sort(function(a, b) {
+        return a.id - b.id;
+    });
+
+    renderCoffees(filteredCoffees);
+}
+
+
+// dont write past this
+
+function addCoffee(e) {
+    e.preventDefault();
+
+    var coffeeName = coffeeNameInput.value;
+    var coffeeRoast = coffeeRoastInput.value;
+
+    if (coffeeName && coffeeRoast) {
+        var newCoffee = {
+            id: coffees.length + 1,
+            name: coffeeName,
+            roast: coffeeRoast
+        };
+
+        coffees.push(newCoffee);
+        renderCoffees(coffees);
+        coffeeNameInput.value = '';
+        coffeeRoastInput.value = '';
     }
 }
 
-console.log(document.forms.login.username); // access the document, to access the forms, to access a form by its name, to access an input by its id.
+var coffees = [
+    {id: 1, name: 'Light City', roast: 'light'},
+    {id: 2, name: 'Half City', roast: 'light'},
+    {id: 3, name: 'Cinnamon', roast: 'light'},
+    {id: 4, name: 'City', roast: 'medium'},
+    {id: 5, name: 'American', roast: 'medium'},
+    {id: 6, name: 'Breakfast', roast: 'medium'},
+    {id: 7, name: 'High', roast: 'dark'},
+    {id: 8, name: 'Continental', roast: 'dark'},
+    {id: 9, name: 'New Orleans', roast: 'dark'},
+    {id: 10, name: 'European', roast: 'dark'},
+    {id: 11, name: 'Espresso', roast: 'dark'},
+    {id: 12, name: 'Viennese', roast: 'dark'},
+    {id: 13, name: 'Italian', roast: 'dark'},
+    {id: 14, name: 'French', roast: 'dark'},
+];
 
-document.forms.login.username.value = "BurgerKing"; // the value property can be used to change the value typed into a text input!
+var coffeesContainer = document.getElementById('coffees');
+var searchInput = document.querySelector('#search');
+var roastSelection = document.querySelector('#roast-selection');
+var coffeeNameInput = document.querySelector('#coffee-name');
+var coffeeRoastInput = document.querySelector('#coffee-roast');
+var submitButton = document.querySelector('#submit');
+var addCoffeeButton = document.querySelector('#add-coffee');
 
-let lorem = document.getElementsByClassName("lorem");
+submitButton.addEventListener('click', updateCoffees);
+searchInput.addEventListener('input', updateCoffees);
+roastSelection.addEventListener('input', updateCoffees);
+addCoffeeButton.addEventListener('click', addCoffee);
 
-for (let j = 0; j < lorem.length; j++) {
-    lorem[j].innerHTML = "<h1>Howdy from JavaScript!</h1>"; // innerHTML can be used to insert HTML into our elements!
-}
-
-let h1s = document.getElementsByTagName("h1"); // this will result in an HTMLCollection of all the h1 elements.
-
-console.log(h1s);
-
-for (let l = 0; l < h1s.length; l++) {
-    if (h1s[l].hasAttribute("class")) /* This will return a boolean on the existence of an attribute, in this case class */ {
-        console.log(h1s[l].getAttribute("class")); // this will return the value assigned to an attribute
-    } else {
-        h1s[l].setAttribute("class", "special-guy"); // this will set the value of an attribute
-    }
-}
-
-setTimeout(function() {
-    for (let i = 0; i < h1s.length; i++) {
-        h1s[i].removeAttribute("class"); // this will remove an attribute
-    }
-}, 5000);
-
-// if we want to add or remove classes...
-h1s[1].classList.add("special-dude");
-
-h1s[1].classList.remove("special-guy");
-
-// Creating an element
-let myNewElement = document.createElement("h3");
-
-console.log(myNewElement);
-
-myNewElement.innerText = "I'm an h3 added via JavaScript!";
-
-document.getElementById("html-here").innerHTML += "<p>I'm added to the HTML too!</p>";
-document.getElementById("html-here").appendChild(myNewElement);
-
-setTimeout(function () {
-    document.getElementById("html-here").removeChild(myNewElement);
-}, 8000)
-
+renderCoffees(coffees);

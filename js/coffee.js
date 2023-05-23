@@ -1,96 +1,130 @@
-function renderCoffee(coffee) {
-    var div = document.createElement('div');
-    div.classList.add('col-sm-6', 'col-md-4', 'col-lg-3'); // Add bootstrap column classes to div
+const loaderWrapper = document.getElementById("loader-wrapper");
+const title = document.getElementById("title");
+const title2 = document.getElementById("title2");
 
-    var heading = document.createElement('h2');
-    heading.textContent = coffee.name;
-    div.appendChild(heading);
+setTimeout(() => {
+    title.style.opacity = "1";
+    title.style.transform = "scale(1)";
+}, 1000);
+setTimeout(() => {
+    title2.style.opacity = "1";
+    title2.style.transform = "scale(1)";
+}, 1000);
 
-    var paragraph = document.createElement('p');
-    paragraph.textContent = coffee.roast;
-    div.appendChild(paragraph);
 
-    return div;
-}
+loaderWrapper.addEventListener("click", () => {
+    loaderWrapper.style.opacity = "0";
+    setTimeout(() => {
+        loaderWrapper.style.display = "none";
+        content.style.display = "block";
+    }, 500);
+});
 
-function renderCoffees(coffees) {
-    var coffeesContainer = document.getElementById('coffees');
-    coffeesContainer.innerHTML = '';
 
-    coffees.forEach(function(coffee) {
-        var coffeeDiv = renderCoffee(coffee);
-        coffeesContainer.appendChild(coffeeDiv);
-    });
-}
 
-function updateCoffees(e) {
-    e.preventDefault();
 
-    var searchTerm = searchInput.value.toLowerCase();
-    var selectedRoast = roastSelection.value;
 
-    var filteredCoffees = coffees.filter(function(coffee) {
-        if (selectedRoast === 'All' || coffee.roast === selectedRoast || !coffee.roast) {
-            return coffee.name.toLowerCase().includes(searchTerm);
-        }
-        var coffeeName = coffee.name.toLowerCase();
-        return coffeeName.includes(searchTerm);
-    });
 
-    filteredCoffees.sort(function(a, b) {
-        return a.id - b.id;
-    });
 
-    renderCoffees(filteredCoffees);
-}
 
-function addCoffee(e) {
-    e.preventDefault();
 
-    var coffeeName = coffeeNameInput.value;
-    var coffeeRoast = coffeeRoastInput.value;
 
-    if (coffeeName && coffeeRoast) {
-        var newCoffee = {
-            id: coffees.length + 1,
-            name: coffeeName,
-            roast: coffeeRoast
-        };
 
-        coffees.push(newCoffee);
-        renderCoffees(coffees);
-        coffeeNameInput.value = '';
-        coffeeRoastInput.value = '';
+
+
+
+
+    function renderCoffee(coffee) {
+        var div = document.createElement('div');
+        div.classList.add('col-sm-6', 'col-md-4', 'col-lg-3'); // Add bootstrap column classes to div
+
+        var heading = document.createElement('h2');
+        heading.textContent = coffee.name;
+        div.appendChild(heading);
+
+        var paragraph = document.createElement('p');
+        paragraph.textContent = coffee.roast;
+        div.appendChild(paragraph);
+
+        return div;
     }
-}
 
-var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
-];
+    function renderCoffees(coffees) {
+        var coffeesContainer = document.getElementById('coffees');
+        coffeesContainer.innerHTML = '';
 
-var coffeesContainer = document.getElementById('coffees');
-var searchInput = document.querySelector('#search');
-var roastSelection = document.querySelector('#roast-selection');
-var coffeeNameInput = document.querySelector('#coffee-name');
-var coffeeRoastInput = document.querySelector('#coffee-roast');
-var submitButton = document.querySelector('#submit');
-var addCoffeeButton = document.querySelector('#add-coffee');
+        coffees.forEach(function (coffee) {
+            var coffeeDiv = renderCoffee(coffee);
+            coffeesContainer.appendChild(coffeeDiv);
+        });
 
-submitButton.addEventListener('click', updateCoffees);
-searchInput.addEventListener('input', updateCoffees);
-addCoffeeButton.addEventListener('click', addCoffee);
+    }
 
-renderCoffees(coffees);
+    function updateCoffees(e) {
+        e.preventDefault();
+        var searchTerm = searchInput.value.toLowerCase();
+        var selectedRoast = roastSelection.value;
+        var filteredCoffees = coffees.filter(function (coffee) {
+            if (selectedRoast === 'All' || coffee.roast === selectedRoast) {
+                return coffee.name.toLowerCase().includes(searchTerm);
+            }
+        });
+        filteredCoffees.sort(function (a, b) {
+            return a.id - b.id;
+        });
+
+    }
+
+    function addCoffee(e) {
+        e.preventDefault();
+
+        var coffeeName = coffeeNameInput.value;
+        var coffeeRoast = coffeeRoastInput.value;
+
+        if (coffeeName && coffeeRoast) {
+            var newCoffee = {
+                id: coffees.length + 1,
+                name: coffeeName,
+                roast: coffeeRoast
+            };
+
+            coffees.push(newCoffee);
+            renderCoffees(coffees);
+            coffeeNameInput.value = '';
+            coffeeRoastInput.value = '';
+        }
+    }
+
+    var coffees = [
+        {id: 1, name: 'Light City', roast: 'light'},
+        {id: 2, name: 'Half City', roast: 'light'},
+        {id: 3, name: 'Cinnamon', roast: 'light'},
+        {id: 4, name: 'City', roast: 'medium'},
+        {id: 5, name: 'American', roast: 'medium'},
+        {id: 6, name: 'Breakfast', roast: 'medium'},
+        {id: 7, name: 'High', roast: 'dark'},
+        {id: 8, name: 'Continental', roast: 'dark'},
+        {id: 9, name: 'New Orleans', roast: 'dark'},
+        {id: 10, name: 'European', roast: 'dark'},
+        {id: 11, name: 'Espresso', roast: 'dark'},
+        {id: 12, name: 'Viennese', roast: 'dark'},
+        {id: 13, name: 'Italian', roast: 'dark'},
+        {id: 14, name: 'French', roast: 'dark'},
+    ];
+
+    var coffeesContainer = document.getElementById('coffees');
+    var searchInput = document.querySelector('#search');
+    var roastSelection = document.querySelector('#roast-selection');
+    var coffeeNameInput = document.querySelector('#coffee-name');
+    var coffeeRoastInput = document.querySelector('#coffee-roast');
+    var submitButton = document.querySelector('#submit');
+    var addCoffeeButton = document.querySelector('#add-coffee');
+
+    submitButton.addEventListener('click', updateCoffees);
+    searchInput.addEventListener('input', updateCoffees);
+    roastSelection.addEventListener('input', updateCoffees);
+    addCoffeeButton.addEventListener('click', addCoffee);
+
+
+    renderCoffees(coffees);
+

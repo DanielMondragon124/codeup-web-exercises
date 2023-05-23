@@ -1,3 +1,129 @@
+body {
+    background: linear-gradient(180deg , black,saddlebrown, sandybrown);
+    height: 100vh;
+}
+
+
+
+
+
+
+
+#loader-wrapper {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom,black,black,black,black);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#loader {
+    display: none;
+}
+#loader {
+    display: none;
+}
+
+#title {
+    color: #fff;
+    font-size: 3rem;
+    font-family: Didot;
+    opacity: 0;
+    transform: scale(0.1);
+    transition: opacity 3s, transform 3s;
+    animation: floating 3s ease-in-out infinite;
+}
+#title2 {
+    color: #fff;
+    font-size: 1rem;
+    font-family: Didot;
+    opacity: 0;
+    transform: scale(0.1);
+    transition: opacity 3s, transform 3s;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1);
+    }
+}
+
+#content {
+    display: none;
+}
+h1 {
+    mix-blend-mode: screen ;
+    margin-left: 50px;
+    margin-top: 10px;
+
+}
+h1 img {
+    height: 80%;
+    width: 100%;
+}
+
+#carouselExampleDark {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+
+
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    bottom: 55px
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    transition: transform 1s;
+}
+
+.slider img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 table {
     border-collapse: collapse;
     margin: 15px 0;
@@ -9,4 +135,73 @@ td, th {
 }
 .MainT {
     text-align: center;
+}
+header {
+    width: 100%;
+    /*background-color: transparent;*/
+    position: relative;
+    z-index: 10;
+    top: 10px;
+}
+nav {
+    display: flex;
+    padding: 1rem 1rem;
+}
+.logo-link {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    width: 100px; /* adjust this to control the logo size */
+    height: auto;
+}
+.menu {
+    display: flex;
+    list-style: none;
+}
+.menu-item {
+    font-family: Didot;
+    font-size: 1rem;
+    margin-left: 2rem;
+    cursor: pointer;
+    position: relative;
+    color: antiquewhite; /* color of the text for headers dropdown*/
+    list-style: none;
+}
+.menu-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-item:hover > div {
+    color: #867767;
+    text-decoration: underline;
+}
+
+.menu-item:hover .dropdown {
+    display: list-item;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background: linear-gradient(to bottom, #433d39, transparent);
+    /*Changes color of dropdown box*/
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+}
+
+.dropdown li {
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown li:hover {
+    background-color: #968e7c; /* changes color of dropdown box which is hovered over*/
 }
