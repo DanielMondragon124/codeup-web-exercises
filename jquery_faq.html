@@ -6,6 +6,15 @@
     .invisible {
       visibility: hidden;
     }
+    .highlighted {
+      font-weight: bold;
+    }
+    .yellow-bg {
+      background-color: yellow;
+    }
+    .blue-text {
+      color: blue;
+    }
   </style>
 </head>
 <body>
@@ -44,6 +53,30 @@
 
 <a href="#" id="visible">Click to make facts visible</a>
 
+<h3 id="national-park1">Yellowstone National Park </h3>
+<ul>
+  <li>Its yellow</li>
+  <li>It has trees </li>
+  <li>It has rocks</li>
+  <li>It has dirt</li>
+</ul>
+<h3 id="national-park2">Mackinac National Park</h3>
+<ul>
+  <li>It has trees</li>
+  <li>Its a park</li>
+  <li>Probably has animals </li>
+  <li>Has cool rocks</li>
+</ul>
+<h3 id="national-park3"> Death Valley National Park</h3>
+<ul>
+  <li>Its where things die </li>
+  <li>It has a valley </li>
+  <li>It has trees on fire </li>
+  <li>Everything is dead at the park </li>
+</ul>
+
+<a href="#" id="Blue">Click to make 1st Li blue</a>
+
 <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 <script>
   "use strict";
@@ -53,10 +86,21 @@
       event.preventDefault();
 
       $('dd').toggleClass('invisible');
-
     });
   });
+      $('h3').click(function() {
+        $(this).next('ul').find('li').addClass('highlighted');
+      });
 
+  $('li').click(function() {
+    $(this).parent().find('li:first-child').addClass('blue-text');
+  });
+
+    $('#Blue').click(function() {
+      $('ul').each(function() {
+        $(this).find('li:last-child').addClass('blue-text');
+      });
+    });
 </script>
 </body>
 </html>
