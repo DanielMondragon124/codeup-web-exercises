@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Store</title>
+  <!-- Add Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Add custom CSS styles -->
+  <style>
+    body {
+      padding: 20px;
+      background: linear-gradient(180deg, #0f0c29, #302b63, #24243e);
+      height: 100vh;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: whitesmoke;
+    }
+    .post {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .post h3 {
+      margin-top: 0;
+    }
+    .post p {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="posts"></div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!-- Add Bootstrap JS script -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script>
+  (function() {
+    "use strict";
+
+    // Create an AJAX GET request for blog.json
+    $.get('blog.json').done(function(data) {
+      console.log(data);
+
+      var postsDiv = $('#posts');
+
+      // Iterate over the data and create a post element for each entry
+      data.forEach(function(post) {
+        var postDiv = $('<div class="post">');
+        postDiv.append($('<h3>').text(post.title));
+        postDiv.append($('<p>').text(post.content));
+        postDiv.append($('<p>').text('Categories: ' + post.categories.join(', ')));
+        postDiv.append($('<p>').text('Date: ' + post.date));
+        postsDiv.append(postDiv);
+      });
+    }).fail(function(xhr, status, error) {
+      console.log(error);
+    });
+  })();
+</script>
+
+</body>
+</html>

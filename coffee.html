@@ -112,3 +112,17 @@
 <script src="js/coffee.js"></script>
 </body>
 </html>
+
+
+
+
+
+function loadInventory() {
+// Create an AJAX GET request for the file under data/inventory.json
+$.get('/blog.json').done(function(data) {
+console.log(data);
+
+});
+}
+// Load inventory initially
+loadInventory();

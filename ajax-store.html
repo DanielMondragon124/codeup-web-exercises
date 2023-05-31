@@ -2,12 +2,40 @@
 <html>
 <head>
   <title>Online Store</title>
+  <!-- Add Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Add custom CSS styles -->
+  <style>
+
+    body {
+      padding: 20px;
+      background: linear-gradient(180deg, #0f0c29, #302b63, #24243e);
+      height: 100vh;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: whitesmoke;
+    }
+    #refreshButton {
+      margin-bottom: 20px;
+    }
+    #products {
+      color:black;
+    }
+    #insertProducts {
+      color: black;
+    }
+
+    .table-striped{
+      background: darkgray;
+    }
+  </style>
 </head>
 <body>
 
 <h1>My Tool Store</h1>
 
-<table id="products">
+<table id="products" class="table table-striped">
   <thead>
   <tr>
     <th>Title</th>
@@ -19,24 +47,45 @@
   <tbody id="insertProducts"></tbody>
 </table>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!-- Add Refresh button -->
+<button id="refreshButton" class="btn btn-primary">Refresh</button>
 
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!-- Add Bootstrap JS script -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <script>
   (function() {
     "use strict";
-    // TODO: Create an AJAX GET request for the file under data/inventory.json
-    $.ajax("inventory.json"); {
-      console.log(data);
+
+    function loadInventory() {
+      // Create an AJAX GET request for the file under data/inventory.json
+      $.get('/inventory.json').done(function(data) {
+        console.log(data);
+
+        var productsTable = $('#insertProducts');
+        productsTable.empty(); // Clear existing data before appending new data
+
+        data.forEach(function(product) {
+          var row = $('<tr>');
+          row.append($('<td>').text(product.title));
+          row.append($('<td>').text(product.quantity));
+          row.append($('<td>').text(product.price));
+          row.append($('<td>').text(product.categories.join(', ')));
+          productsTable.append(row);
+        });
+      }).fail(function(xhr, status, error) {
+        console.log(error);
+      });
     }
 
+    // Load inventory initially
 
 
-
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
+    // Refresh button click event handler
+    $('#refreshButton').click(function() {
+      loadInventory();
+    });
   })();
 </script>
 

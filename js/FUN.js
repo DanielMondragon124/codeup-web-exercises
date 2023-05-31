@@ -1,99 +1,48 @@
-function renderCoffee(coffee) {
-    var div = document.createElement('div');
-    div.classList.add('col-sm-6', 'col-md-4', 'col-lg-3'); // Add bootstrap column classes to div
+"use strict";
 
-    var heading = document.createElement('h2');
-    heading.textContent = coffee.name;
-    div.appendChild(heading);
+$(function() {
 
-    var paragraph = document.createElement('p');
-    paragraph.textContent = coffee.roast;
-    div.appendChild(paragraph);
+    // $.ajax('https://pokeapi.co/api/v2/pokemon/charmande').done(function (data, status, jqXhr) {
+    //     console.log("AJAX call completed successfully!");
+    //     console.log("Request status: " + status);
+    //     console.log("Data returned from server:");
+    //     console.log(data);
+    //     console.log(data.name)
+    // }).fail(function (jqXhr, status, error) {
+    //     console.log("There was an error! Check the console for details");
+    //     console.log("Response status: " + status);
+    //     console.log("Error object: " + error);
 
-    return div;
-}
+    // fetch('https://pokeapi.co/api/v2/pokemon/charmander').then(response =>
+    //     response.json()).then(response => console.log(response))
 
-function renderCoffees(coffees) {
-    var coffeesContainer = document.getElementById('coffees');
-    coffeesContainer.innerHTML = '';
-
-    coffees.forEach(function(coffee) {
-        var coffeeDiv = renderCoffee(coffee);
-        coffeesContainer.appendChild(coffeeDiv);
-    });
-}
+    // })
 
 
-function updateCoffees(e) {
-    e.preventDefault();
-
-    var searchTerm = searchInput.value.toLowerCase();
-    var selectedRoast = roastSelection.value;
-
-    var filteredCoffees = coffees.filter(function(coffee) {
-        if (selectedRoast === 'All' || coffee.roast === selectedRoast) {
-            return coffee.name.toLowerCase().includes(searchTerm);
-        }
-    });
-
-    filteredCoffees.sort(function(a, b) {
-        return a.id - b.id;
-    });
-
-    renderCoffees(filteredCoffees);
-}
+    $("#submitButton").on('click', searchSWApi);
 
 
-// dont write past this
 
-function addCoffee(e) {
-    e.preventDefault();
+    function searchSWApi(e){
+        e.preventDefault()
 
-    var coffeeName = coffeeNameInput.value;
-    var coffeeRoast = coffeeRoastInput.value;
 
-    if (coffeeName && coffeeRoast) {
-        var newCoffee = {
-            id: coffees.length + 1,
-            name: coffeeName,
-            roast: coffeeRoast
-        };
+        let userInput = $("#swInput").val();
 
-        coffees.push(newCoffee);
-        renderCoffees(coffees);
-        coffeeNameInput.value = '';
-        coffeeRoastInput.value = '';
+        $.get('https://swapi.dev/api/people/?search=' + userInput).done(function(data) {
+            console.log(data);
+
+            $('#starwars').html(
+                '<div class="row">' +
+                '<div class="col-6">Name</div>' +
+                '<div class="col-6">Date of Birth</div>' +
+                '<div class="col-6">' + data.results[0].name + '</div>' +
+                '<div class="col-6">' + data.results[0].birth_year + '</div>' +
+                '</div>'
+            );
+        });
     }
-}
 
-var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
-];
 
-var coffeesContainer = document.getElementById('coffees');
-var searchInput = document.querySelector('#search');
-var roastSelection = document.querySelector('#roast-selection');
-var coffeeNameInput = document.querySelector('#coffee-name');
-var coffeeRoastInput = document.querySelector('#coffee-roast');
-var submitButton = document.querySelector('#submit');
-var addCoffeeButton = document.querySelector('#add-coffee');
 
-submitButton.addEventListener('click', updateCoffees);
-searchInput.addEventListener('input', updateCoffees);
-roastSelection.addEventListener('input', updateCoffees);
-addCoffeeButton.addEventListener('click', addCoffee);
-
-renderCoffees(coffees);
+})

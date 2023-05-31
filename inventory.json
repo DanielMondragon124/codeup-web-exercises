@@ -6,7 +6,21 @@
       "tool"
     ],
     "price": 20
-  }, {
+  },{
+  "title": "Bat",
+  "quantity": 5,
+  "categories": [
+    "Weapon"
+  ],
+  "price": 200
+},{
+  "title": "Map",
+  "quantity": 2,
+  "categories": [
+    "tool"
+  ],
+  "price": 2000
+}, {
   "title": "Drill",
   "quantity": 5,
   "categories": [

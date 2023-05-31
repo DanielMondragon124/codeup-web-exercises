@@ -1,0 +1,1 @@
+let myMapboxKey = 'pk.eyJ1IjoiZGFuaWVsMDA0NDY2IiwiYSI6ImNsaWJyN2gxaTA3Y3kzZ3F2aHZlZDFrbnMifQ.ECLbaVAIOpV_Q1cFHAaNRw'
