@@ -1,1 +1,2 @@
 let myMapboxKey = 'pk.eyJ1IjoiZGFuaWVsMDA0NDY2IiwiYSI6ImNsaWJyN2gxaTA3Y3kzZ3F2aHZlZDFrbnMifQ.ECLbaVAIOpV_Q1cFHAaNRw'
+let OWM_KEY = '8d727a653ecf04fe97532713ceef263a'
