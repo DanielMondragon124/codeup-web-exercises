@@ -11,12 +11,26 @@
   <link href="CSS/weather_map.css" rel="stylesheet" />
 </head>
 <body>
-<h1 class="title">WEATHER</h1>
-<div id="weather-info"></div>
+<h1>WEATHER</h1>
+
+
 <div id="weather-forecast"></div>
 <div class="container">
   <div id="map"></div>
 </div>
+
+<form id="search-city-form">
+  <input type="text" id="city-input" placeholder="Enter City">
+  <button type="submit">Search by City</button>
+</form>
+
+<form id="search-latlon-form">
+  <input type="text" id="latitude-input" placeholder="Enter Latitude">
+  <input type="text" id="longitude-input" placeholder="Enter Longitude">
+  <button type="submit">Search by Lat/Lon</button>
+</form>
+
+
 <pre id="coordinates" class="coordinates"></pre>
 
 <script src="js/mapbox_key.js"></script>
