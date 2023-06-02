@@ -1,6 +1,5 @@
-
 $(function () {
-    let miami = [-80.19719610443641, 25.76504860987099];
+    let miami = [-95.3698, 29.7604];
     let marker;
 
     function updateWeather() {
@@ -18,21 +17,27 @@ $(function () {
                 const date = new Date(today.getTime() + index * 24 * 60 * 60 * 1000); // Add index days to today's date
                 const weatherInfo = forecast.weather[0].description;
                 const temperature = forecast.main.temp;
+                const humidity = forecast.main.humidity;
+                const precipitation = forecast.pop; // Probability of precipitation (chance of rain)
 
                 const forecastHTML = `
-          <div class="weather-box">
-            <h2>${date.toLocaleDateString("en-US", { weekday: "long" })}</h2>
-            <p>${date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</p>
-            <p>${weatherInfo}</p>
-            <p>${temperature}°F</p>
-          </div>
-        `;
+        <div class="weather-box">
+          <h2>${date.toLocaleDateString("en-US", { weekday: "long" })}</h2>
+          <p>${date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</p>
+          <p>${weatherInfo}</p>
+          <p>Temperature: ${temperature}°F</p>
+          <p>Humidity: ${humidity}%</p>
+          <p>Chance of Precipitation: ${precipitation}%</p>
+        </div>
+      `;
                 html += forecastHTML;
             });
 
             $("#weather-forecast").html(html);
         });
     }
+
+
     updateWeather();
     // creates map
     mapboxgl.accessToken = myMapboxKey;

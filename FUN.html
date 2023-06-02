@@ -3,62 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>WeatherMap</title>
-    <style>
-        .container {
-            display: flex;
-            gap: 20px;
-        }
-
-        section {
-            background-color: lightgray;
-            padding: 10px;
-            width: 200px;
-            height: 200px;
-        }
-    </style>
+ <script src="CSS/FUN.css"></script>
 </head>
 <body>
-<div id="weather-info" class="container">
+<h1>Animated Weather Icons</h1>
+
+<div class="icon sun-shower">
+    <div class="cloud"></div>
+    <div class="sun">
+        <div class="rays"></div>
+    </div>
+    <div class="rain"></div>
 </div>
 
-<script src="js/mapbox_key.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-<script>
-    let latLong = [29.7604, -95.3698];
-    $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${latLong[0]}&lon=${latLong[1]}&units=imperial&appid=${OWM_KEY}`).done(function(data) {
-        console.log(data);
+<div class="icon thunder-storm">
+    <div class="cloud"></div>
+    <div class="lightning">
+        <div class="bolt"></div>
+        <div class="bolt"></div>
+    </div>
+</div>
 
-        let currentDate = new Date();
-        let forecastCount = 0;
-        let weatherHTML = '';
+<div class="icon cloudy">
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+</div>
 
-        for (let i = 0; i < data.list.length; i++) {
-            let forecast = data.list[i];
-            let forecastDate = new Date(forecast.dt * 1000);
+<div class="icon flurries">
+    <div class="cloud"></div>
+    <div class="snow">
+        <div class="flake"></div>
+        <div class="flake"></div>
+    </div>
+</div>
 
-            if (forecastDate >= currentDate) {
-                let month = forecastDate.toLocaleString('default', { month: 'long' });
+<div class="icon sunny">
+    <div class="sun">
+        <div class="rays"></div>
+    </div>
+</div>
 
-                let forecastHTML = `
-                    <section>
-                        <h1>${month} ${forecastDate.getDate()}</h1>
-                        <p>${forecast.main.temp_max} / ${forecast.main.temp_min}</p>
-                    </section>
-                `;
+<div class="icon rainy">
+    <div class="cloud"></div>
+    <div class="rain"></div>
+</div>
 
-                weatherHTML += forecastHTML;
-                forecastCount++;
-
-                if (forecastCount === 7) {
-                    break; // Stop iterating after 7 forecasts
-                }
-            }
-        }
-
-        $("#weather-info").html(weatherHTML);
-    });
-</script>
-<script src="js/weather_map.js"></script>
-<script src="js/weather_map2.js"></script>
+<p>Based on <a href="https://dribbble.com/shots/2097042-Widget-Weather" target="_blank">Dribbble</a> by kylor</p>
+<script src="js/FUN.js"></script>
 </body>
 </html>
