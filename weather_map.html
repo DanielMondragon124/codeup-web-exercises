@@ -10,21 +10,20 @@
   />
   <link href="CSS/weather_map.css" rel="stylesheet" />
 
-<!--  <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 </head>
 <body>
-<h1>WEATHER</h1>
-
-<div class='light x1'></div>
-<div class='light x2'></div>
-<div class='light x3'></div>
-<div class='light x4'></div>
-<div class='light x5'></div>
-<div class='light x6'></div>
-<div class='light x7'></div>
-<div class='light x8'></div>
-<div class='light x9'></div>
+<header>
+  <nav>
+  <a href="" class="logo-link">
+    <img src="photos/dragon-png-20.png" alt="Your Logo" class="logo">
+  </a>
+    <div class="main-text">
+    <h1>Dragon Weather</h1>
+    </div>
+  </nav>
+</header>
 
 <div class="WFC" id="weather-forecast"></div>
 <div class="container">
@@ -38,13 +37,72 @@
 
 <form id="search-latlon-form">
   <input type="text" id="latitude-input" placeholder="Enter Latitude">
+  <br>
   <input type="text" id="longitude-input" placeholder="Enter Longitude">
   <button type="submit">Search by Lat/Lon</button>
 </form>
 
-
 <pre id="coordinates" class="coordinates"></pre>
 
+<footer>
+  <div class="container">
+    <section class="top-footer">
+      <div class="logo-div">
+        <h1><a href="#"><img src="photos/dragon-png-20.png" alt="dragon"></a></h1>
+      </div>
+      <ul>
+        <li><a href="#">Weebly Themes</a></li>
+        <li><a href="#">Submit a Ticket</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Theme Tweak</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Showcase</a></li>
+        <li><a href="#">Widgetkit</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Affiliates</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+    </section>
+    <div class="line"></div>
+    <section class="bottom-footer">
+      <div class="social-media-links">
+        <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fab fa-facebook-f"></i>
+                    </span>
+        </a>
+        <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fab fa-twitter"></i>
+                    </span>
+        </a>
+        <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fas fa-rss"></i>
+                    </span>
+        </a>
+        <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fab fa-google-plus-g"></i>
+                    </span>
+        </a>
+        <a href="#">
+          <span class="icon-wrapper">
+                        <i class="fab fa-instagram"></i>
+                    </span>
+        </a>
+      </div>
+      <h5>@Copyright. All rights reserved.</h5>
+    </section>
+  </div>
+</footer>
 <script src="js/mapbox_key.js"></script>
 <script
         src="https://code.jquery.com/jquery-3.7.0.min.js"
@@ -54,3 +112,4 @@
 <script src="js/weather_map.js"></script>
 </body>
 </html>
+

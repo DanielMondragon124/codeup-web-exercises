@@ -20,11 +20,13 @@ $(function () {
                 const humidity = forecast.main.humidity;
                 const precipitation = forecast.pop; // Probability of precipitation (chance of rain)
 
+                const weatherIconClass = getWeatherIconClass(weatherInfo); // Get the corresponding Font Awesome icon class
+
                 const forecastHTML = `
         <div class="weather-box">
           <h2>${date.toLocaleDateString("en-US", { weekday: "long" })}</h2>
           <p>${date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</p>
-          <p>${weatherInfo}</p>
+          <p><i class="${weatherIconClass}"></i></p>
           <p>Temperature: ${temperature}°F</p>
           <p>Humidity: ${humidity}%</p>
           <p>Chance of Precipitation: ${precipitation}%</p>
@@ -37,6 +39,30 @@ $(function () {
         });
     }
 
+    function getWeatherIconClass(weatherInfo) {
+        let weatherIconClass = "";
+        // Add conditions to map weather info to the corresponding Font Awesome icon class
+        if (weatherInfo.includes("clear sky")) {
+            weatherIconClass = "fas fa-sun";
+        } else if (weatherInfo.includes("light rain")) {
+            weatherIconClass = "fas fa-cloud-rain";
+        } else if (weatherInfo.includes("heavy intensity rain")) {
+            weatherIconClass = "fas fa-bolt";
+        } else if (weatherInfo.includes("moderate rain")) {
+            weatherIconClass = "fas fa-cloud-showers-heavy";
+        } else if (weatherInfo.includes("overcast clouds")) {
+            weatherIconClass = "fas fa-cloud";
+        } else if (weatherInfo.includes("broken clouds")) {
+            weatherIconClass = "fas fa-cloud-sun";
+        } else if (weatherInfo.includes("scattered clouds")) {
+            weatherIconClass = "fas fa-cloud-meatball";
+        } else if (weatherInfo.includes("few clouds")) {
+            weatherIconClass = "fas fa-cloud";
+        } else {
+            weatherIconClass = "fas fa-question-circle";
+        }
+        return weatherIconClass;
+    }
 
     updateWeather();
     // creates map

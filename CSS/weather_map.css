@@ -1,9 +1,26 @@
-
+header {
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    z-index: 10;
+    top: 10px;
+}
+.logo-link {
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo {
+    width: 100px;
+    height: auto;
+    filter: invert(1);
+}
 #map {
-    /* the width and height may be set to any size */
     width: 80%;
     height: 400px;
-    border:10px ridge #848487;
+    border:10px ridge #008080;
 }
 .container {
     display: flex;
@@ -14,7 +31,7 @@
 }
 h1 {
     font-size: 50px;
-    text-align: center;
+    text-align: left;
     background: linear-gradient(90deg,#fadb61 0%,#ff006a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color:transparent;
@@ -30,7 +47,7 @@ h1 {
     100% {
         filter: hue-rotate(12deg);
     }
-}
+}*
 .weather-box {
     width: calc(100% / 7);
     height: 350px;
@@ -39,8 +56,18 @@ h1 {
     padding: 10px;
     margin-bottom: 20px;
     text-align: center;
-    border:5px ridge #848487;
+    border:5px ridge #008080;
+    box-shadow: none;
+    color: white;
 }
+ .weather-box:hover {
+     box-shadow: 0px 0px 9px #cbced1, 0px 0px 9px white;
+     transition: 1s;
+     border:5px ridge ghostwhite;
+     background: #40E0D0;
+     color: #008080;
+ }
+
 .weather-box h2 {
     font-size: 20px;
     margin-bottom: 5px;
@@ -51,6 +78,7 @@ h1 {
 }
 #coordinates {
     margin-top: 10px;
+    color: white;
 }
 html {
     margin: 0;
@@ -61,5 +89,176 @@ html {
 .WFC {
  color: white;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+input {
+    caret-color: red;
+}
+label, input, button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
 
+label {
+    margin-bottom: 4px;
+}
 
+label:nth-of-type(2) {
+    margin-top: 12px;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+input {
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 0px 0px 8px #cbced1, inset 0px 0px 8px white;
+}
+
+button {
+    color: white;
+    margin-top: 20px;
+    background: #008080;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: none;
+}
+
+button:hover {
+    box-shadow: 0px 0px 8px #cbced1, 0px 0px 8px white;
+    transition: 1s;
+    background: #40E0D0;
+}
+/*Footer */
+footer {
+    text-align: center;
+}
+footer li {
+    font-family: Didot;
+    color: white;
+
+}
+.Footer-RL {
+    font-family: Didot;
+}
+.container {
+    min-width: 768px;
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 2em;
+}
+footer h1 {
+    margin: 0;
+    font-weight: bolder;
+}
+h5 {
+    color: white;
+    font-weight: 200;
+    text-align: center;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+}
+footer .icon-wrapper:hover,
+footer .top-footer a:hover {
+    color: white;
+    background: #40E0D0;
+    box-shadow: 0px 0px 9px #cbced1, 0px 0px 9px white;
+    transition: 1s;
+}
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+footer .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4em 0;
+    height: 30em;
+}
+.top-footer {
+    display: flex;
+    justify-content: space-between;
+}
+.icon-wrapper {
+    border: 2px solid white;
+    border-radius: 2.4em;
+    height: 2.4em;
+    width: 2.4em;
+    display: flex;
+}
+.icon-wrapper i {
+    margin: auto;
+}
+.logo-div {
+    flex-basis: 25%;
+    position: relative;
+    bottom: 5px;
+}
+.logo-div img {
+    width: 50%;
+    height: 50%;
+    color: white;
+    filter: invert(1);
+}
+.social-media-links {
+    display: flex;
+}
+footer .bottom-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .top-footer a {
+    text-transform: uppercase;
+    font-weight: 200;
+}
+footer .bottom-footer a {
+    margin: .3em;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    background: white;
+}
+.container {
+    margin: 12% auto;
+    text-align: center;
+    width: 80%;
+}
+
+.weatherIcon {
+    display: inline-block;
+    font-family: Helvetica, sans-serif;
+    font-size: 1em;
+    height: 100px;
+    line-height: 1em;
+    margin: 2%;
+    position: relative;
+    width: 100px;
+}
+
+.weather-box p i {
+    font-size: 40px;
+    color: white;
+}
+.weather-box p i:hover {
+    color: #008080;
+}
