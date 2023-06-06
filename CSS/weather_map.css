@@ -239,7 +239,7 @@ footer .bottom-footer a {
     background: white;
 }
 .container {
-    margin: 12% auto;
+    /*margin: 12% auto;*/
     text-align: center;
     width: 80%;
 }
