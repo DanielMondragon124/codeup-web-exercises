@@ -74,3 +74,5 @@ for (const developer of developers) {
 }
 
 list += '</ul>';
+
+document.getElementById("body")[0].innerHTML += list;
