@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+  fetch("https://third-repeated-saffron.glitch.me/books").then(req =>req.json()).then(date=>console.log(date)); //Get all
+  fetch("https://third-repeated-saffron.glitch.me/books/1").then(req =>req.json()).then(date=>console.log(date)); //Get one
+
+  const newBook = {title: "The Laws of Human Nature" , author: "Robert Greene"};
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newBook),
+  }
+
+  // fetch("https://third-repeated-saffron.glitch.me/books", options).then(() =>
+  //         fetch("https://third-repeated-saffron.glitch.me/books")).then(resp => resp.json()).then(data => console.log(data));
+//   Post a new book to the json server
+
+  fetch("https://third-repeated-saffron.glitch.me/books/1" , {
+    method: "PATCH",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({title: "Notre-Dame de Paris"})
+  }).then(resp => resp.json()).then(data => console.log(data)); // Edit less destructive
+
+  // fetch("https://third-repeated-saffron.glitch.me/books/1" , {
+  //   method: "PUT",
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify({title: "Notre-Dame de Paris"})
+  // }).then(resp => resp.json()).then(data => console.log(data)); // edit more destructive
+
+  fetch("https://third-repeated-saffron.glitch.me/books/5", {
+    method: "DELETEEEEE"
+  }).then(() => fetch("https://third-repeated-saffron.glitch.me/books/1"))
+          .then(resp => resp.json()).then(data => console.log(data));
+
+</script>
+</body>
+</html>
